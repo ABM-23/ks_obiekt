@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+#Codeblocks
+ks_obiekt.*
