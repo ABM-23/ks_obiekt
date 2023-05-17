@@ -6,6 +6,7 @@ PlikZUzytkownikami::PlikZUzytkownikami(){
 
 void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
+    fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
 
@@ -28,6 +29,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 }
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
+    fstream plikTekstowy;
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;
@@ -78,10 +80,10 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
 }
 vector<Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
     vector<Uzytkownik> uzytkownicy;
+    fstream plikTekstowy;
     Uzytkownik uzytkownik;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
 
-    fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
 
     if (plikTekstowy.good() == true) {
