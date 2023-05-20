@@ -22,6 +22,8 @@ class UzytkownikMenadzer {
     bool czyIstniejeLogin(string login);
     int sprawdzLoginIHaslo();
     void ustawIdZalogowanegoUzytkownika();
+    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
+
 
  public:
     UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
@@ -29,6 +31,8 @@ class UzytkownikMenadzer {
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
+    void wylogowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 
 };
 #endif
