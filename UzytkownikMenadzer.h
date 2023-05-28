@@ -33,6 +33,7 @@ class UzytkownikMenadzer {
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    int podajIdZalogowanegoUzytkownika();
 
 };
 #endif

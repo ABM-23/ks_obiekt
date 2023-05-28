@@ -19,13 +19,13 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
     do
     {
         cout << "Podaj login: ";
-        cin >> login;
+        login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
 
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     cout << "Podaj haslo: ";
-    cin >> haslo;
+    haslo = MetodyPomocnicze::wczytajLinie();
     uzytkownik.ustawHaslo(haslo);
 
     return uzytkownik;
@@ -58,6 +58,7 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku(){
 }
 void UzytkownikMenadzer::logowanieUzytkownika(){
     idZalogowanegoUzytkownika = sprawdzLoginIHaslo();
+
 }
 void UzytkownikMenadzer::wylogowanieUzytkownika(){
     idZalogowanegoUzytkownika = 0;
@@ -113,4 +114,7 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika() {
 }
 void UzytkownikMenadzer::zapiszWszystkichUzytkownikowDoPliku(vector<Uzytkownik> uzytkownicy){
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+int UzytkownikMenadzer::podajIdZalogowanegoUzytkownika() {
+    return idZalogowanegoUzytkownika;
 }
