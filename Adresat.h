@@ -1,5 +1,5 @@
-#ifndef UZYTKOWNIK_H
-#define UZYTKOWNIK_H
+#ifndef ADRESAT_H
+#define ADRESAT_H
 
 #include <iostream>
 #include <vector>

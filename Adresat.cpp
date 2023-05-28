@@ -24,7 +24,6 @@ void Adresat::ustawEmail(string nowyEmail){
 void Adresat::ustawAdres(string nowyAdres){
     adres = nowyAdres;
 }
-
 int Adresat::pobierzId() {
     return id;
 }
@@ -38,11 +37,11 @@ string Adresat::pobierzNazwisko() {
     return nazwisko;
 }
 string Adresat::pobierzNumerTelefonu() {
-    return nazwisko;
+    return numerTelefonu;
 }
 string Adresat::pobierzEmail() {
-    return nazwisko;
+    return email;
 }
 string Adresat::pobierzAdres() {
-    return nazwisko;
+    return adres;
 }
