@@ -21,7 +21,6 @@ class UzytkownikMenadzer {
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     int sprawdzLoginIHaslo();
-    void ustawIdZalogowanegoUzytkownika();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
 
 
