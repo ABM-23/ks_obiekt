@@ -14,7 +14,6 @@ using namespace std;
 
 class AdresatMenadzer {
     PlikZAdresatami plikZAdresatami;
-    int idOstatniegoAdresata;
     int idZalogowanegoUzytkownika;
     vector <Adresat> adresaci;
 

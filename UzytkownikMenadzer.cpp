@@ -55,7 +55,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow(){
 }
 void UzytkownikMenadzer::logowanieUzytkownika(){
     idZalogowanegoUzytkownika = sprawdzLoginIHaslo();
-
 }
 void UzytkownikMenadzer::wylogowanieUzytkownika(){
     idZalogowanegoUzytkownika = 0;
