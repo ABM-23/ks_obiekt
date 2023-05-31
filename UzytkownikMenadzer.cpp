@@ -53,9 +53,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow(){
         cout << uzytkownicy.at(i).pobierzHaslo() << endl << endl;
     }
 }
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku(){
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
 void UzytkownikMenadzer::logowanieUzytkownika(){
     idZalogowanegoUzytkownika = sprawdzLoginIHaslo();
 
