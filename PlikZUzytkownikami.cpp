@@ -25,7 +25,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 }
 bool PlikZUzytkownikami::czyPlikJestPusty()
 {
-    fstream plikTekstowy;
+    fstream plikTekstowy(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str());
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
         return true;
