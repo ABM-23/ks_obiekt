@@ -114,3 +114,7 @@ void UzytkownikMenadzer::zapiszWszystkichUzytkownikowDoPliku(vector<Uzytkownik> 
 int UzytkownikMenadzer::podajIdZalogowanegoUzytkownika() {
     return idZalogowanegoUzytkownika;
 }
+bool UzytkownikMenadzer::czyUzytkownikZalogowany(){
+    if (idZalogowanegoUzytkownika > 0) return true;
+    else return false;
+}

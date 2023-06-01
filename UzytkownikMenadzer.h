@@ -23,10 +23,10 @@ class UzytkownikMenadzer {
     int sprawdzLoginIHaslo();
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> uzytkownicy);
 
-
  public:
     UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
            uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+           idZalogowanegoUzytkownika = 0;
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
@@ -34,5 +34,6 @@ class UzytkownikMenadzer {
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int podajIdZalogowanegoUzytkownika();
+    bool czyUzytkownikZalogowany();
 };
 #endif
