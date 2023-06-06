@@ -45,7 +45,7 @@ int main()
                 ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                //WYSZUKAJ PO NAZWISKU
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
