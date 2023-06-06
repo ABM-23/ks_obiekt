@@ -117,6 +117,6 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     }
     return adresat;
 }
-int PlikZAdresatami::pobierzIdOstatniegoAdresata(){
- return idOstatniegoAdresata;
+int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
+    return idOstatniegoAdresata;
 }

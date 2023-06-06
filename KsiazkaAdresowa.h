@@ -30,5 +30,6 @@ public:
     bool czyUzytkownikZalogowany();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
+    void wyszukajAdresatowPoImieniu();
 };
 #endif

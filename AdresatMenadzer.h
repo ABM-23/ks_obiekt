@@ -20,15 +20,15 @@ class AdresatMenadzer {
     Adresat podajDaneNowegoAdresata();
     void dopiszAdresataDoPliku(Adresat adresat);
     void wyswietlDaneAdresata(Adresat adresat);
-
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
  public:
     AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
-    //void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    //void ustawIdZalogowanegoUzytkownika(int noweId);
+    void wyszukajAdresatowPoImieniu();
 };
 #endif
