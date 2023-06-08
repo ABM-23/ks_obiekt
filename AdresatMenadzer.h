@@ -21,6 +21,7 @@ class AdresatMenadzer {
     void dopiszAdresataDoPliku(Adresat adresat);
     void wyswietlDaneAdresata(Adresat adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    char wybierzOpcjeZMenuEdycja();
     int podajIdWybranegoAdresata();
 
  public:
@@ -30,6 +31,7 @@ class AdresatMenadzer {
 
     void dodajAdresata();
     void usunAdresata();
+    void edytujAdresata();
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();

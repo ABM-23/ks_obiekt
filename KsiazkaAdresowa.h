@@ -28,6 +28,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
     void usunAdresata();
+    void edytujAdresata();
     void wyswietlWszystkichAdresatow();
     bool czyUzytkownikZalogowany();
     char wybierzOpcjeZMenuGlownego();

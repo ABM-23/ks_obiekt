@@ -31,5 +31,6 @@ public:
     void ustawIdZalogowanegoUzytkownika(int noweId);
     int pobierzIdOstatniegoAdresata();
     void usunAdresataZPliku(int idUsuwanegoAdresata);
+    void edytujAdresataWPliku(Adresat adresat);
 };
 #endif
