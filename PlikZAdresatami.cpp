@@ -143,6 +143,34 @@ void PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata){
 
     podmienPlikZAdresatamiNaTymczasowy();
 }
+void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat){
+
+    string linia;
+    int idEdytowanegoAdresata = adresat.pobierzId();
+    int idZPliku;
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(NAZWA_PLIKU_TYMCZASOWEGO.c_str(), ios::out | ios::app);
+
+    if(odczytywanyPlikTekstowy.good() == true) {
+        while(getline(odczytywanyPlikTekstowy, linia)) {
+            idZPliku = linia[0] - 48;
+            if (idZPliku != idEdytowanegoAdresata) {
+                tymczasowyPlikTekstowy << linia;
+                tymczasowyPlikTekstowy << endl;
+            } else {
+                tymczasowyPlikTekstowy << zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+                tymczasowyPlikTekstowy << endl;
+            }
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    podmienPlikZAdresatamiNaTymczasowy();
+}
+
 void PlikZAdresatami::podmienPlikZAdresatamiNaTymczasowy() {
     remove(NAZWA_PLIKU_Z_ADRESATAMI.c_str());
     rename(NAZWA_PLIKU_TYMCZASOWEGO.c_str(), NAZWA_PLIKU_Z_ADRESATAMI.c_str());
