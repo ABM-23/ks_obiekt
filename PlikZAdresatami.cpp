@@ -120,3 +120,44 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
 int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
     return idOstatniegoAdresata;
 }
+void PlikZAdresatami::usunAdresataZPliku(int idUsuwanegoAdresata){
+
+    string linia;
+    int idZPliku;
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(NAZWA_PLIKU_TYMCZASOWEGO.c_str(), ios::out | ios::app);
+
+    if(odczytywanyPlikTekstowy.good() == true){
+        while(getline(odczytywanyPlikTekstowy, linia)) {
+            idZPliku = linia[0] - 48;
+            if (idZPliku != idUsuwanegoAdresata) {
+                tymczasowyPlikTekstowy << linia;
+                tymczasowyPlikTekstowy << endl;
+            }
+        }
+    }
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+
+    podmienPlikZAdresatamiNaTymczasowy();
+}
+void PlikZAdresatami::podmienPlikZAdresatamiNaTymczasowy() {
+    remove(NAZWA_PLIKU_Z_ADRESATAMI.c_str());
+    rename(NAZWA_PLIKU_TYMCZASOWEGO.c_str(), NAZWA_PLIKU_Z_ADRESATAMI.c_str());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
