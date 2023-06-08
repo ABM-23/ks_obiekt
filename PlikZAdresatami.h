@@ -5,13 +5,13 @@
 #include <fstream>
 #include <vector>
 
+#include "PlikTekstowy.h"
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
 
-class PlikZAdresatami {
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
+class PlikZAdresatami : public PlikTekstowy {
     const string NAZWA_PLIKU_TYMCZASOWEGO;
     int idOstatniegoAdresata;
 
@@ -20,10 +20,9 @@ class PlikZAdresatami {
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     void podmienPlikZAdresatamiNaTymczasowy();
-    bool czyPlikJestPusty();
 
 public:
-    PlikZAdresatami(string nazwaPlikuZAdresatami, string nazwaPlikuTymczasowego) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami), NAZWA_PLIKU_TYMCZASOWEGO(nazwaPlikuTymczasowego) {};
+    PlikZAdresatami(string nazwaPlikuZAdresatami, string nazwaPlikuTymczasowego) : PlikTekstowy(nazwaPlikuZAdresatami), NAZWA_PLIKU_TYMCZASOWEGO(nazwaPlikuTymczasowego) {};
 
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     bool dopiszAdresataDoPliku(Adresat adresat);

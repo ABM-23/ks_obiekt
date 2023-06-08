@@ -182,9 +182,7 @@ char AdresatMenadzer::wybierzOpcjeZMenuEdycja() {
 }
 void AdresatMenadzer::edytujAdresata() {
     system("cls");
-    Adresat adresat;
     int idEdytowanegoAdresata = 0;
-    int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -193,7 +191,7 @@ void AdresatMenadzer::edytujAdresata() {
     char wybor;
     bool czyIstniejeAdresat = false;
 
-    for (int i = 0; i < adresaci.size(); i++) {
+    for (int i = 0; i < (int)adresaci.size(); i++) {
         if (adresaci.at(i).pobierzId() == idEdytowanegoAdresata) {
             czyIstniejeAdresat = true;
             wybor = wybierzOpcjeZMenuEdycja();

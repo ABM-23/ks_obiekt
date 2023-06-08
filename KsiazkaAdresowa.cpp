@@ -42,7 +42,6 @@ void KsiazkaAdresowa::edytujAdresata(){
     adresatMenadzer -> edytujAdresata();
 }
 
-
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     char wybor;
 
