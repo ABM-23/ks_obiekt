@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     char wybor;
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "Temp.txt");
 
     while (true)
     {
@@ -51,7 +51,7 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                //USUWANIE
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
                 //EDYTOWANIE

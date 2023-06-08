@@ -21,13 +21,15 @@ class AdresatMenadzer {
     void dopiszAdresataDoPliku(Adresat adresat);
     void wyswietlDaneAdresata(Adresat adresat);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    int podajIdWybranegoAdresata();
 
  public:
-    AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+    AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika, string nazwaPlikuTymczasowego) : plikZAdresatami(nazwaPlikuZAdresatami, nazwaPlikuTymczasowego), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
 
     void dodajAdresata();
+    void usunAdresata();
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();

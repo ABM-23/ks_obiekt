@@ -6,7 +6,7 @@ void KsiazkaAdresowa::rejestracjaUzytkownika(){
 void KsiazkaAdresowa::logowanieUzytkownika(){
     uzytkownikMenadzer.logowanieUzytkownika();
     if (uzytkownikMenadzer.czyUzytkownikZalogowany()){
-     adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.podajIdZalogowanegoUzytkownika());
+     adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.podajIdZalogowanegoUzytkownika(), NAZWA_PLIKU_TYMCZASOWEGO);
     }
 }
 void KsiazkaAdresowa::wylogowanieUzytkownika(){
@@ -35,6 +35,10 @@ void KsiazkaAdresowa::wyszukajAdresatowPoImieniu(){
 void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku(){
     adresatMenadzer -> wyszukajAdresatowPoNazwisku();
 }
+void KsiazkaAdresowa::usunAdresata(){
+    adresatMenadzer -> usunAdresata();
+}
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     char wybor;
 
@@ -60,7 +64,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     cout << "2. Wyszukaj po imieniu" << endl;
     cout << "3. Wyszukaj po nazwisku" << endl;
     cout << "4. Wyswietl adresatow" << endl;
-    //cout << "5. Usun adresata" << endl;
+    cout << "5. Usun adresata" << endl;
     //cout << "6. Edytuj adresata" << endl;
     cout << "---------------------------" << endl;
     cout << "7. Zmien haslo" << endl;
